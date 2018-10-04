@@ -14,6 +14,14 @@
  	fill(0,0,255);
  	noStroke();
  	ellipse(mouseX,mouseY,20,20);
+ 	fill(255,255,0);
+ 	rect(0,0,50,800);
+ 	rect(0,0,800,50);
+ 	rect(0,750,800,50);
+ 	rect(750,0,50,800);
+ 	rect(187.5,200,50,600);
+ 	rect(375,0,50,600);
+ 	rect(750-187.5,200,50,600);
  	new Bacteria(mouseX,mouseY);
  	bob.show(); 
  	bob.move();
@@ -27,8 +35,8 @@
  	int myColor, myX, myY;
  	Bacteria(int x, int y){
  		myColor = color(255,255,0);
- 		myX = x;
- 		myY = y;
+ 		myX = 400;
+ 		myY = 400;
  	}	
 
  	void move(){
