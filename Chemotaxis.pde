@@ -1,12 +1,15 @@
  //declare bacteria variables here  
 
- Bacteria bob; 
+ Bacteria[] bob; 
  void setup()   
  {     
  	//initialize bacteria variables here   
  	size(800,800);
- 	bob = new Bacteria(mouseX,mouseY);
- }   
+ 	bob = new Bacteria[20];
+ 	for(int i = 0; i < bob.length; i++){
+ 		bob[i] = new Bacteria();
+ 	}   
+ }
  void draw()   
  {    
  	//move and show the bacteria
@@ -22,9 +25,10 @@
  	rect(187.5,200,50,600);
  	rect(375,0,50,600);
  	rect(750-187.5,200,50,600);
- 	new Bacteria(mouseX,mouseY);
- 	bob.show(); 
- 	bob.move();
+ 	for(int i = 0; i < bob.length; i++){
+ 		bob[i].show(); 
+ 		bob[i].move();
+ 	}
  	if(get(mouseX,mouseY) == color(255,255,0)){
  		background(255,0,0);
  	}
@@ -33,7 +37,7 @@
  {     
  	//lots of java!   
  	int myColor, myX, myY;
- 	Bacteria(int x, int y){
+ 	Bacteria(){
  		myColor = color(255,255,0);
  		myX = 400;
  		myY = 400;
@@ -52,6 +56,9 @@
 
  	void show(){
  		fill(myColor);
- 		ellipse(myX,myY,50,50);
+ 		ellipse(myX,myY,30,30);
+ 		fill(255,0,0);
+ 		ellipse(myX-15,myY,15,15);
+ 		ellipse(myX+15,myY,15,15);
  	}
  }    
